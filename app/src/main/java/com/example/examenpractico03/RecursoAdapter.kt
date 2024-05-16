@@ -5,7 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.TextView
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import java.text.FieldPosition
 
 class RecursoAdapter(private val recursos: List<Recurso>) : RecyclerView.Adapter<RecursoAdapter.ViewHolder>() {
@@ -16,6 +18,11 @@ class RecursoAdapter(private val recursos: List<Recurso>) : RecyclerView.Adapter
         val descripcionTextView: TextView = view.findViewById(R.id.tvDescripcion)
         val tipoTextView: TextView = view.findViewById(R.id.tvTipoArchivo)
         val enlaceTextView: TextView = view.findViewById(R.id.tvEnlace)
+        val urlImageView: ImageView = view.findViewById(R.id.imageView)
+
+        fun bind(imageUrl: String?){
+            Picasso.get().load(imageUrl).into(urlImageView)
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
