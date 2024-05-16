@@ -4,9 +4,9 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiService {
-    @GET("materia/recurso")
-    fun obtenerRecursos(): Call<List<recurso>>
+    @GET("v1/IngenieriaEnSistemas")
+    fun obtenerRecursos(): Call<List<Recurso>>
 
-    @GET("materia/recurso/{id}")
-    fun obtenerRecursoPorId(@Path("id") id: Int): Call<recurso>
+    @GET("v1/IngenieriaEnSistemas/{id}")
+    fun obtenerRecursoPorId(@Path("id") id: Int): Call<Recurso>
 }
