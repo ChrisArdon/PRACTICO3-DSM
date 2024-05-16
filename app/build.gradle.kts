@@ -7,6 +7,11 @@ android {
     namespace = "com.example.examenpractico03"
     compileSdk = 34
 
+    buildFeatures{
+        dataBinding = true
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.examenpractico03"
         minSdk = 24
